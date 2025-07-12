@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cygwptbs80gak"]
+
+[ext_resource type="Texture2D" uid="uid://c150vewv4n4am" path="res://assets/shapes/polygon.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cyac1tuaqdcti" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://d3l6guejonuqx" path="res://scenes/bullet.tscn" id="2_qhqgy"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+bullet_scene = ExtResource("2_qhqgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(0, -24, -24, 24, 24, 24)
+
+[node name="BulletSpawner" type="Node2D" parent="."]
+position = Vector2(18, 0)
